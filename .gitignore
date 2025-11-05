@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv*/
+.vscode/
+.DS_Store
+out/
+samples/
+last_*.txt
+last_cv.json
