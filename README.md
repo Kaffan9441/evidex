@@ -2,6 +2,114 @@
 
 **Advanced Legal Document Analysis Platform**
 
+A sleek, dark‑theme web app for legal professionals that extracts text from PDFs/images (Google Cloud Vision) and generates structured legal insights (DeepSeek LLM).
+
+## ✨ Highlights
+- **Multi‑format upload** – PDFs, PNG, JPG, JPEG
+- **Accurate OCR** – Google Cloud Vision
+- **AI‑driven analysis** – Summaries, issue spotting, clause extraction, drafting, checklists
+- **Precision Legal UI** – glass‑panel cards, smooth animations, dark palette
+- **History & Templates** – view past analyses, ready‑made contract templates
+- **Client Profiles** – manage client data
+
+## 🚀 Tech Stack
+- **Backend**: FastAPI, SQLModel, SQLite
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS, Framer Motion
+- **AI services**: Google Cloud Vision (OCR), DeepSeek (LLM)
+
+## 📦 Setup
+
+### Prerequisites
+- Python 3.9+
+- Node 18+
+- Google Cloud Vision API key
+- DeepSeek API key
+
+### Backend
+```bash
+cd EVIDEX
+python3 -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r backend/requirements.txt
+cd backend
+cp .env.example .env   # add your API keys
+```
+
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev   # http://localhost:3000
+```
+
+## ▶️ Run locally
+```bash
+# backend
+source venv/bin/activate
+uvicorn backend.main:app --reload --port 8000   # http://localhost:8000
+
+# frontend (in another terminal)
+cd frontend
+npm run dev
+```
+
+## 📚 Usage
+1. Choose a document type (Contract, Pleading, Evidence, etc.).
+2. Upload a file.
+3. Select an analysis task (summary, issue spotting, clause extraction, drafting, checklist).
+4. Click **Analyze** – results appear as styled cards with key points, clauses, or action items.
+
+## 🔧 API
+- `POST /api/upload` – upload document
+- `GET /api/docs` – list documents
+- `POST /api/run_task` – start analysis
+- `GET /api/tasks/{id}` – get result
+- `GET /api/tasks` – list all tasks
+
+## 📁 Project layout
+```
+EVIDEX/
+├─ backend/
+│  ├─ api/routes.py
+│  ├─ services/ocr.py
+│  ├─ services/llm.py
+│  └─ …
+├─ frontend/
+│  └─ src/app/   # pages
+│  └─ src/components/
+└─ README.md
+```
+
+## 🔐 Security
+- API keys are read from `.env` (ignored by Git).
+- Input validation on all endpoints.
+- No authentication in MVP – add before production.
+
+## 🚧 Roadmap
+- User auth & authorization
+- Multi‑user support
+- Export reports (PDF/DOCX)
+- Real‑time collaboration
+- Cloud storage integration
+
+## 📄 License
+MIT – see `LICENSE`.
+
+## 👤 Author
+**Affan Khan** – [GitHub @kaffan](https://github.com/kaffan)
+
+## 🙏 Acknowledgments
+- Google Cloud Vision
+- DeepSeek
+- Next.js team
+- FastAPI community
+
+---
+
+Built for legal professionals.
+
+**Advanced Legal Document Analysis Platform**
+
 A cutting-edge web application designed for legal professionals to analyze documents using OCR and natural language processing.
 
 ---
