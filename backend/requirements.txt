@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+sqlmodel
+google-cloud-vision
+openai
+python-multipart
+python-dotenv
+httpx
